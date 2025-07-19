@@ -1,0 +1,29 @@
+.nameapp{
+    text-align: center;
+    padding: 1em;
+    margin-top: 2%;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    font-size: 5em;
+    letter-spacing: 0.1em;
+}
+.playbut{
+    border: none;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: bold;
+    margin-top: 6%;
+    min-width: 23%;
+    min-height: 5rem;
+    border-color: aliceblue;
+    background: linear-gradient(10deg, #91dced, #e99191);
+    border: none !important;
+}
+.setname{
+    margin-top: 2%;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 0.3em;
+}
+.setname > h1{
+    font-size: 3rem;
+}
