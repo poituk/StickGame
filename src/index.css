@@ -1,3 +1,6 @@
+body {
+    background-color: #ece4e4 !important; 
+}
 .nameapp{
     text-align: center;
     padding: 1em;
@@ -16,13 +19,38 @@
     min-width: 23%;
     min-height: 5rem;
     border-color: aliceblue;
-    background: linear-gradient(10deg, #91dced, #e99191);
+    background: linear-gradient(
+        45deg,
+        #71d7ed,    
+        #d56565 
+    );
+    background-size: 300% 300%;
     border: none !important;
+    transition: all 0.5s ease;
+    animation: pulse 2.5s infinite, gradientFlow 5s ease infinite;
+
 }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(233, 145, 145, 0.7); }
+  }
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.playbut:hover {
+    animation-play-state: paused;
+    background-size: 100% 100%;
+    filter: brightness(1.1); 
+    transform: scale(1.1) !important;
+}
+
 .setname{
     margin-top: 2%;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 0.3em;
+    position: 'relative'
 }
 .setname > h1{
     font-size: 3rem;

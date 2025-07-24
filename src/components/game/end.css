@@ -1,0 +1,37 @@
+.win-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    width: 35%;
+    height: 75%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+  
+.wintext {
+    text-align: center;
+    padding: 1%;
+    border-bottom: 1px solid;
+}
+.win-content{
+    height: 77%;
+}
+.win-exit{
+    display: flex;
+    gap: 2%;
+    height: 8%;
+    border-top: 1px solid;
+}
+.win-exit > Button{
+    margin-top: 3%;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+}
+.info{
+    margin: 2%;
+}

@@ -1,0 +1,36 @@
+.form-group{
+    text-align: center;
+    margin: 2%;
+    size: 10%;
+}
+.form-group > label{
+    margin-left: 0.5em;
+    width: 20%;
+    min-height: 2.5rem;
+    text-align: center;
+}
+.form-group > input,
+.form-group > select {
+    margin-left: 0.5em;
+    width: 20%;
+    min-height: 2.6rem;
+    text-align: center;
+}
+.form-group > select {
+    appearance: none; /* Убираем стандартную стрелку */
+}
+.back{
+    position: absolute; /* Вырываем кнопку из потока */
+    left: 0;   
+    top: 0;         /* Прижимаем к левому краю */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: url('../../assets/back.svg') no-repeat center;
+    background-size: 100%; /* Ширина × Высота */
+    width: 3em; /* Размер самой кнопки */
+    height: 3em;
+    margin: 0.6em;
+    z-index: 1; 
+}

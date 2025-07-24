@@ -1,0 +1,99 @@
+.split-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+.left-panel {
+    flex: 0 0 20%;
+    border-right: 1px solid;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.infonameapp{
+    padding: 0;
+    font-size: 2em;
+    margin: 0;
+    border-bottom: 1px;
+}  
+.logomini{
+    border-bottom: 1px solid !important;
+}
+
+.MField{
+  height: 100vh;
+  width: 100%;
+}
+.blockinfo{
+  margin-bottom: 6%;
+}
+.blockinfo > h5{
+  margin: 4%;
+  color: #545c68;
+}
+
+.MInfo {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logomini {
+  padding-top: 2%;
+  flex-shrink: 0;
+  height: 8%;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.pBut {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.Bcontainer {
+  flex-shrink: 0;
+  border-top: 1px solid;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  padding: 3%;
+}
+.Bexit{
+  width: 20%;
+  height: 100%;
+  background: url('../../assets/exit.svg') no-repeat center;
+  background-size: 75%;
+  border: 0;
+}
+.Bexit:hover{
+  transform: scale(1.05);
+}
+.BNext{
+  height: 100%;
+  width: 80%;
+  border: 0 !important;
+}
+.BNext:hover{
+  transform: scale(1.02);
+  filter: brightness(1.1); 
+}
+
+.pBut::-webkit-scrollbar {
+  width: 0;
+}
