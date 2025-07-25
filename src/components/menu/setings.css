@@ -17,19 +17,19 @@
     text-align: center;
 }
 .form-group > select {
-    appearance: none; /* Убираем стандартную стрелку */
+    appearance: none;
 }
 .back{
-    position: absolute; /* Вырываем кнопку из потока */
+    position: absolute;
     left: 0;   
-    top: 0;         /* Прижимаем к левому краю */
+    top: 0;        
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     background: url('../../assets/back.svg') no-repeat center;
-    background-size: 100%; /* Ширина × Высота */
-    width: 3em; /* Размер самой кнопки */
+    background-size: 100%; 
+    width: 3em;
     height: 3em;
     margin: 0.6em;
     z-index: 1; 

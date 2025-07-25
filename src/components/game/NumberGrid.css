@@ -21,7 +21,7 @@
     border: none;
     font-size: 2rem;
     font-weight: bold;
-    aspect-ratio: 1/1; /* Сохраняет квадратную форму */
+    aspect-ratio: 1/1;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s;
     background: url('../../assets/stick.png') no-repeat center;

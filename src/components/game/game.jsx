@@ -17,11 +17,11 @@ export default function Game({stateScreen, gameRule, starttime}) {
             return newArray;
         });
     };
-    const countmove = useRef(0); // Создаём мутабельную ref-переменную
+    const countmove = useRef(0);
     const handleMove = () => {
-        countmove.current += 1; // Изменяем значение без перерендера
+        countmove.current += 1;
     };
-    const gameState = {FieldState, updateElement, move, setMove, stateScreen}
+    const gameState = {FieldState, setFieldState, updateElement, move, setMove, stateScreen}
     return (
         <div className="split-container">
             {win != undefined && <End name = {win} setWin = {setWin} gameRule = {gameRule} gameState = {gameState} countmove = {countmove} starttime = {starttime} />}
@@ -33,7 +33,7 @@ export default function Game({stateScreen, gameRule, starttime}) {
             </div>
             <ToastContainer
                 position="top-center"
-                autoClose={5000} // Закрытие через 5 секунд
+                autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

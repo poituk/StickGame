@@ -3,7 +3,6 @@ import './setings.css'
 import { 
     Stack, 
     Button,
-    Form,
 } from "react-bootstrap";
 import ShowRulesButton from "../rule/showrule"
 import { toast, ToastContainer } from 'react-toastify';
@@ -178,7 +177,7 @@ export default function Setings({stateScreen, setgameRule}) {
             </form>
             <ToastContainer
                 position="top-center"
-                autoClose={5000} // Закрытие через 5 секунд
+                autoClose={5000} 
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
