@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import ShowRulesButton from '../rule/showrule'
+import ShowRulesButton from '../rule/ShowingRule'
 
 
 export default function Menu({stateScreen}) {

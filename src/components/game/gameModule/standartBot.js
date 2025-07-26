@@ -1,4 +1,4 @@
-export default function StandartBot(Field, l, r){
+export default function standartBot(Field, l, r){
     let n = Field.filter(item => item == 0).length;
     const dp = new Array(n + 1).fill(0);
     const cnt = new Array(n + 1).fill(0);

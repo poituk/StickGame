@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RulesModal from './rule'
+import RulesModal from './Rule'
 import './rule.css'
 
 export default function ShowRulesButton(){

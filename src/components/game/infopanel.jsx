@@ -1,14 +1,14 @@
-import Next from "./gameModule/Next";
+import next from "./gameModule/next";
 import {useEffect, useState} from 'react'
 import { Button } from 'react-bootstrap';
-export default function Info({gameRule, GameState, setWin, countmove}){
-    const  listmode= ['none', 'Стандартный', 'Диапазонный', '"Рядом"', 'Комбинированный', 'Особый'];
-    const Movestyle = {
-        color: GameState.move === 1 ? 'rgb(50, 82, 196)' : 'rgb(204, 70, 70)',    
+export default function Info({gameRule, gameState, setWin, countMove}){
+    const  listMode = ['none', 'Стандартный', 'Диапазонный', '"Рядом"', 'Комбинированный', 'Особый'];
+    const moveStyle = {
+        color: gameState.move === 1 ? 'rgb(50, 82, 196)' : 'rgb(204, 70, 70)',    
     };
-    const ActiveButton = {
-        "pointer-events": GameState.FieldState.filter(item => item == 2).length >= gameRule.l ? 'visible' : 'none',    
-        "background-color": GameState.FieldState.filter(item => item == 2).length >= gameRule.l ? 'rgb(90, 166, 86)' : 'rgba(182, 172, 172, 0.6)', 
+    const activeButton = {
+        "pointer-events": gameState.fieldState.filter(item => item == 2).length >= gameRule.l ? 'visible' : 'none',    
+        "background-color": gameState.fieldState.filter(item => item == 2).length >= gameRule.l ? 'rgb(90, 166, 86)' : 'rgba(182, 172, 172, 0.6)', 
     };
     const [time, setTime] = useState(0);
     
@@ -28,10 +28,10 @@ export default function Info({gameRule, GameState, setWin, countmove}){
             <div className="pBut">
                 <div className="blockinfo">
                     <h2>Ходит</h2>
-                    {GameState.move == 1 ? (
-                        <h4 style={Movestyle}>{gameRule.Fplayer}</h4>
+                    {gameState.move == 1 ? (
+                        <h4 style={moveStyle}>{gameRule.firstPlayer}</h4>
                     ) : (
-                        <h4 style={Movestyle}>{gameRule.Splayer}</h4>
+                        <h4 style={moveStyle}>{gameRule.secondPlayer}</h4>
                     )}
                 </div>
                 <div className="blockinfo">
@@ -44,7 +44,7 @@ export default function Info({gameRule, GameState, setWin, countmove}){
                 </div>
                 <div className="blockinfo">
                     <h2>Режим</h2>
-                    <h5>{listmode[gameRule.mode]}</h5>
+                    <h5>{listMode[gameRule.mode]}</h5>
                 </div>
                 <div className="blockinfo">
                     <h3>Минимум взять</h3>
@@ -56,16 +56,16 @@ export default function Info({gameRule, GameState, setWin, countmove}){
                 </div>
                 <div className="blockinfo">
                     <h3>Взял</h3>
-                    <h5>{GameState.FieldState.filter(item => item == 2).length}</h5>
+                    <h5>{gameState.fieldState.filter(item => item == 2).length}</h5>
                 </div>
                 <div className="blockinfo">
                     <h3>Осталось</h3>
-                    <h5>{GameState.FieldState.filter(item => item != 1).length}</h5>
+                    <h5>{gameState.fieldState.filter(item => item != 1).length}</h5>
                 </div>
             </div>
             <div className="Bcontainer">
-                <button className="Bexit" onClick={() => GameState.stateScreen('menu')}></button>
-                <Button style={ActiveButton} className="BNext" onClick = {() => {Next(gameRule, GameState, setWin, countmove), setTime(0)}}>Следующий ход</Button>
+                <button className="Bexit" onClick={() => gameState.stateScreen('menu')}></button>
+                <Button style={activeButton} className="BNext" onClick = {() => {next(gameRule, gameState, setWin, countMove), setTime(0)}}>Следующий ход</Button>
             </div>
         </div>
     );

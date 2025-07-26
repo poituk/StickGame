@@ -4,13 +4,13 @@ import {
     Stack, 
     Button,
 } from "react-bootstrap";
-import ShowRulesButton from "../rule/showrule"
+import ShowRulesButton from "../rule/ShowingRule"
 import { toast, ToastContainer } from 'react-toastify';
 
-export default function Setings({stateScreen, setgameRule}) {
-    const [Fstate, setFstate] = useState(1)
-    const [Ostate, setOstate] = useState('Bot')
-    function SetSetings(e) {
+export default function Setings({stateScreen, setGameRule}) {
+    const [firstField, setFirstField] = useState(1)
+    const [secondState, setSecondState] = useState('Bot')
+    function setingSetings(e) {
         e.preventDefault()
         
         const formData = new FormData(e.target);
@@ -38,8 +38,8 @@ export default function Setings({stateScreen, setgameRule}) {
         if(!data.r){
             data.r = 3;
         }
-        if(!data.Splayer){
-            data.Splayer = 'Бот';
+        if(!data.secondPlayer){
+            data.secondPlayer = 'Бот';
         }
 
         data.r = parseInt(data.r);
@@ -67,7 +67,7 @@ export default function Setings({stateScreen, setgameRule}) {
                 progress: undefined,
             });
         } else {
-            setgameRule(data)
+            setGameRule(data)
             stateScreen('game')
         }
     }
@@ -90,10 +90,10 @@ export default function Setings({stateScreen, setgameRule}) {
                 <h1>игры</h1>
             </Stack>
             <ShowRulesButton />
-            <form onSubmit = {SetSetings}>
+            <form onSubmit = {setingSetings}>
                 <div className="form-group">
                     <label>Режим </label>
-                    <select name="mode" onChange={(e) => setFstate(e.target.value)}>
+                    <select name="mode" onChange={(e) => setFirstField(e.target.value)}>
                     {Gmode.map((option) => (
                         <option key={option.value} value={option.value}>
                         {option.label}
@@ -103,7 +103,7 @@ export default function Setings({stateScreen, setgameRule}) {
                 </div>
                 <div className="form-group">
                     <label>Противник </label>
-                    <select name="opponent" onChange={(e) => setOstate(e.target.value)}>
+                    <select name="opponent" onChange={(e) => setSecondState(e.target.value)}>
                     {Gopponent.map((option) => (
                         <option key={option.value} value={option.value}>
                         {option.label}
@@ -111,10 +111,10 @@ export default function Setings({stateScreen, setgameRule}) {
                     ))}
                     </select>
                 </div>
-                {Ostate == "Bot" ? (<div className="form-group">
+                {secondState == "Bot" ? (<div className="form-group">
                     <label>Имя игрока</label>
                     <input
-                    name = "Fplayer"
+                    name = "firstPlayer"
                     type="text"
                         maxLength={16}
                     defaultValue = "Игрок"
@@ -124,7 +124,7 @@ export default function Setings({stateScreen, setgameRule}) {
                     <div className="form-group">
                         <label>Имя первого игрока</label>
                         <input
-                        name = "Fplayer"
+                        name = "firstPlayer"
                         type="text"
                         maxLength={12}
                         defaultValue = "Игрок 1"
@@ -133,7 +133,7 @@ export default function Setings({stateScreen, setgameRule}) {
                     <div className="form-group">
                         <label>Имя Второго игрока</label>
                         <input
-                        name = "Splayer"
+                        name = "secondPlayer"
                         type="text"
                         maxLength={12}
                         defaultValue = "Игрок 2"
@@ -151,7 +151,7 @@ export default function Setings({stateScreen, setgameRule}) {
                     defaultValue = {10}
                     />
                 </div>
-                {(Fstate == 2 || Fstate == 4) && (<div className="form-group">
+                {(firstField == 2 || firstField == 4) && (<div className="form-group">
                     <label>Минимум взять за ход </label>
                     <input
                     name = "l"
@@ -162,7 +162,7 @@ export default function Setings({stateScreen, setgameRule}) {
                     defaultValue = {2}
                     />
                 </div>)}
-                {Fstate != 5 && (<div className="form-group">
+                {firstField != 5 && (<div className="form-group">
                     <label>Максимум взять за ход </label>
                     <input
                     name = "r"

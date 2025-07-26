@@ -1,8 +1,8 @@
 import './end.css'
 import { Modal, Button } from 'react-bootstrap';
-export default function End({name, setWin, gameRule, gameState, countmove, starttime}){
-    const  listmode= ['none', 'Стандартный', 'Диапазонный', '"Рядом"', 'Комбинированный', 'Особый'];
-    const GameDuration = Math.floor((Date.now() - starttime) / 1000)
+export default function End({name, setWin, gameRule, gameState, countMove, startTime}){
+    const  listMode= ['none', 'Стандартный', 'Диапазонный', '"Рядом"', 'Комбинированный', 'Особый'];
+    const gameDuration = Math.floor((Date.now() - startTime) / 1000)
     return (
         <div className='win-menu'>
             <div className='wintext'>
@@ -14,7 +14,7 @@ export default function End({name, setWin, gameRule, gameState, countmove, start
             </div>
             <div className='win-content'>
                 <div className='info'>
-                    <h5>Режим: {listmode[gameRule.mode]}</h5>
+                    <h5>Режим: {listMode[gameRule.mode]}</h5>
                 </div>
                 <div className='info'>
                     <h5>Минимум можно взять: {gameRule.l}</h5>
@@ -23,7 +23,7 @@ export default function End({name, setWin, gameRule, gameState, countmove, start
                     <h5>Максимум можно взять: {gameRule.r}</h5>
                 </div>
                 <div className='info'>
-                    <h5>Количество ходов: {countmove.current}</h5>
+                    <h5>Количество ходов: {countMove.current}</h5>
                 </div>
                 <div className='info'>
                 <h5>
@@ -35,7 +35,7 @@ export default function End({name, setWin, gameRule, gameState, countmove, start
                             (hours % 10 === 1 && hours % 100 !== 11 ? '' :
                             [2,3,4].includes(hours % 10) && ![12,13,14].includes(hours % 100) ? 'а' : 'ов')}{' '}
                         </span>
-                    ))(Math.floor(GameDuration / 3600))}
+                    ))(Math.floor(gameDuration / 3600))}
                     
                     {(minutes => minutes > 0 && (
                         <span>
@@ -44,7 +44,7 @@ export default function End({name, setWin, gameRule, gameState, countmove, start
                             (minutes % 10 === 1 && minutes % 100 !== 11 ? 'а' :
                             [2,3,4].includes(minutes % 10) && ![12,13,14].includes(minutes % 100) ? 'ы' : '')}{' '}
                         </span>
-                    ))(Math.floor((GameDuration % 3600) / 60))}
+                    ))(Math.floor((gameDuration % 3600) / 60))}
                     
                     {(seconds => (
                         <span>
@@ -53,7 +53,7 @@ export default function End({name, setWin, gameRule, gameState, countmove, start
                             (seconds % 10 === 1 && seconds % 100 !== 11 ? 'а' :
                             [2,3,4].includes(seconds % 10) && ![12,13,14].includes(seconds % 100) ? 'ы' : '')}
                         </span>
-                    ))(Math.floor(GameDuration % 60))}
+                    ))(Math.floor(gameDuration % 60))}
                 </h5>
                 </div>
             </div>

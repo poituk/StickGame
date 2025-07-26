@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button, Accordion } from 'react-bootstrap';
-import * as Rules from './textrule';
+import * as Rules from './TextRules';
 export default function RulesModal({ show, onClose }) {
     console.log(Rules)
     return (
