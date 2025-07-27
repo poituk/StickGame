@@ -27,15 +27,15 @@ export default function Info({gameRule, gameState, setWin, countMove}){
             </div>
             <div className="pBut">
                 <div className="blockinfo">
-                    <h2>Ходит</h2>
+                    <h3>Ходит</h3>
                     {gameState.move == 1 ? (
-                        <h4 style={moveStyle}>{gameRule.firstPlayer}</h4>
+                        <h5 style={moveStyle}>{gameRule.firstPlayer}</h5>
                     ) : (
-                        <h4 style={moveStyle}>{gameRule.secondPlayer}</h4>
+                        <h5 style={moveStyle}>{gameRule.secondPlayer}</h5>
                     )}
                 </div>
                 <div className="blockinfo">
-                    <h2>Время хода</h2>
+                    <h3>Время хода</h3>
                     <h5>
                     {time >= 3600 && `${Math.floor(time / 3600).toString().padStart(2, '0')} : `}
                     {time >= 60 && `${Math.floor((time % 3600) / 60).toString().padStart(2, '0')} : `}
@@ -43,7 +43,7 @@ export default function Info({gameRule, gameState, setWin, countMove}){
                     </h5>
                 </div>
                 <div className="blockinfo">
-                    <h2>Режим</h2>
+                    <h3>Режим</h3>
                     <h5>{listMode[gameRule.mode]}</h5>
                 </div>
                 <div className="blockinfo">
@@ -65,7 +65,7 @@ export default function Info({gameRule, gameState, setWin, countMove}){
             </div>
             <div className="Bcontainer">
                 <button className="Bexit" onClick={() => gameState.stateScreen('menu')}></button>
-                <Button style={activeButton} className="BNext" onClick = {() => {next(gameRule, gameState, setWin, countMove), setTime(0)}}>Следующий ход</Button>
+                <Button style={activeButton} className="BNext" onClick = {() => {next(gameRule, gameState, setWin, countMove), setTime(0)}}><p>Следующий ход</p></Button>
             </div>
         </div>
     );

@@ -26,6 +26,7 @@
 }  
 .logomini{
     border-bottom: 1px solid !important;
+    font-size: 1vw;
 }
 
 .MField{
@@ -33,14 +34,22 @@
   width: 100%;
 }
 .blockinfo{
-  margin-bottom: 6%;
+  margin: 0.5em;
 }
 .blockinfo > h5{
-  margin: 4%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1em;
   color: #545c68;
+}
+.blockinfo > h3{
+  font-size: 1.5em;
+  color: #000000;
+  
 }
 
 .MInfo {
+  font-size: 1vw;
   position: relative;
   text-align: center;
   height: 100vh;
@@ -51,7 +60,7 @@
 .logomini {
   padding-top: 2%;
   flex-shrink: 0;
-  height: 8%;
+  height: 5em;
   color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
@@ -67,12 +76,13 @@
 .Bcontainer {
   flex-shrink: 0;
   border-top: 1px solid;
-  height: 8%;
+  height: 5em;
   display: flex;
   align-items: center;
   justify-content: space-around;
   z-index: 1;
   padding: 3%;
+  
 }
 .Bexit{
   width: 20%;
@@ -93,7 +103,10 @@
   transform: scale(1.02);
   filter: brightness(1.1); 
 }
-
+.BNext > p{
+  margin: 0;
+  font-size: 1vw;
+}
 .pBut::-webkit-scrollbar {
   width: 0;
 }
