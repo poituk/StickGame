@@ -22,10 +22,11 @@ export default function Game({stateScreen, gameRule, startTime}) {
     const handleMove = () => {
         countMove.current += 1;
     };
+    const gameMoveCopy = gameRule.firstMove;
     const gameState = {fieldState, setfieldState, updateElement, move, setMove, stateScreen}
     return (
         <div className="split-container">
-            {win != undefined && <End name = {win} setWin = {setWin} gameRule = {gameRule} gameState = {gameState} countMove = {countMove} startTime = {startTime} />}
+            {win != undefined && <End name = {win} setWin = {setWin} gameRule = {gameRule} gameState = {gameState} countMove = {countMove} startTime = {startTime} gameMove = {gameMoveCopy}/>}
             <div className="left-panel">
                 <Info gameRule = {gameRule} gameState = {gameState} win = {win} setWin = {setWin} countMove = {handleMove} block = {block} setBlock = {setBlock}/>
             </div>

@@ -59,7 +59,7 @@ export default async function next(gameRule, gameState, setWin, countMove, setBl
         let nArray;
         if(gameRule.mode == 1 || gameRule.mode == 2) nArray = standartBot([... gameState.fieldState], gameRule.l, gameRule.r);
         else if(gameRule.mode == 3 || gameRule.mode == 4) nArray = inRowBot([... gameState.fieldState], gameRule.l, gameRule.r);
-        else nArray = specialBot([... gameState.fieldState], 1, 3);
+        else nArray = specialBot([... gameState.fieldState]);
         gameState.setfieldState(nArray);
         gameState.fieldState = nArray;
         await sleep(1200);
