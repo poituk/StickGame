@@ -34,3 +34,10 @@
     margin: 0.6em;
     z-index: 1; 
 }
+.radioButton{
+    display: inline-block;
+    width: 20%;
+}
+.radioButton > label{
+    width: 50%;
+}

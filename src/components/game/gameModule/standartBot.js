@@ -14,7 +14,6 @@ export default function standartBot(Field, l, r){
     }
     let mx = -1, CountGet = 0;
     for(let i = l;n - i >= Math.max(n - r, 0);i++){
-        console.log(i);
         if(dp[n] == 0){
             if(cnt[n - i] > mx){
                 CountGet = i;

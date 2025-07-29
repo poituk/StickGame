@@ -43,7 +43,6 @@ export default function inRowBot(field, l, r) {
         xorField ^= g[x];
     }
     if(xorField == 0){
-        console.log(max0);
         let pos;
         for(let i = 0; i < zeroRanges.length; i++){
             if(max0 == zeroRanges[i]){
@@ -62,7 +61,7 @@ export default function inRowBot(field, l, r) {
         for(let i = 0; i < zeroRanges.length && !flag; i++) {
             for(let j = l; j <= r && zeroRanges[i] - j >= 0 && !flag; j++) {
                 for(let k = 0; zeroRanges[i] - j - k >= 0; k++){
-                    if(xorField ^ g[zeroRanges[i]] ^ g[k] ^ g[zeroRanges[i] - j - k] == 0) {
+                    if ((xorField ^ g[zeroRanges[i]] ^ g[k] ^ g[zeroRanges[i] - j - k]) == 0) {
                         pos = startZeroRanges[i] + k;
                         amountDel = j;
                         flag = true;

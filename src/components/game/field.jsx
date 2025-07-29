@@ -1,8 +1,8 @@
 import ActiveButton from './gameModule/ActiveButton';
 import './numberGrid.css'
-import exitIcon from '../../assets/stickbroke3.png';
+import exitIcon from '../../assets/stickBroke.png';
 import { useEffect, useState, useRef  } from 'react';
-export default function Field({gameRule, gameState}){
+export default function Field({gameRule, gameState, block}){
     const [isMouseDown, setIsMouseDown] = useState(false);
     const buttonsRef = useRef([]);
 
@@ -36,7 +36,7 @@ export default function Field({gameRule, gameState}){
         visibility: 'hidden',
         pointerEvents: 'none',
         userSelect: 'none',
-        transform: 'scale(0.9)',
+        transform: 'scale(1.02)',
         transition: 'all 2s ease-out',
         background: `url(${exitIcon}) no-repeat center`,
         backgroundSize: '67%',
@@ -46,7 +46,7 @@ export default function Field({gameRule, gameState}){
         backgroundBlendMode: 'multiply',
         transform: 'scale(1.03)',
         transition: 'transform 0.5s ease',
-        backgroundSize: '70%'
+        backgroundSize: '63%'
     }
     ];
     return (
@@ -59,7 +59,7 @@ export default function Field({gameRule, gameState}){
                     className="grid-item"  
                     ref={(el) => (buttonsRef.current[index] = el)}
                     onMouseEnter={() => handleButtonEnter(index)} 
-                    onClick={() => ActiveButton(gameRule, gameState, index)}>
+                    onClick={() => {if (block == 0) { ActiveButton(gameRule, gameState, index) }}}>
                         <div className='numb'>{index + 1}</div>
                     </button>
                 ))}

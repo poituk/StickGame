@@ -1,9 +1,9 @@
-import { toast, ToastContainer} from 'react-toastify';
+import { toast } from 'react-toastify';
 const warningelement = {
     warning: (message) => {
         toast.warning(message, {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -20,7 +20,7 @@ function standartCheck({gameRule, gameState, index}){
         if(gameState.fieldState.filter(item => item == 2).length < gameRule.r){
             gameState.updateElement(index, 2)
         }else{
-            warningelement.warning('Нельзя выбрать эту карточку!');
+            warningelement.warning('Нельзя выбрать эту палочку!');
         }
     }
 }
@@ -29,16 +29,16 @@ function inRowCheck({gameRule, gameState, index}){
         if((index === 0 || gameState.fieldState[index - 1] !== 2) || (index === gameRule.n - 1 || gameState.fieldState[index + 1] !== 2)) {
             gameState.updateElement(index, 0);
         } else {
-            warningelement.warning('Нельзя выбрать эту карточку!');
+            warningelement.warning('Нельзя выбрать эту палочку!');
         }
     } else if(gameState.fieldState.filter(item => item == 2).length < gameRule.r){
         if((index > 0 && gameState.fieldState[index - 1] === 2) || (index < gameRule.n - 1 && gameState.fieldState[index + 1] === 2) || gameState.fieldState.filter(item => item == 2).length == 0){
             gameState.updateElement(index, 2);
         } else {
-            warningelement.warning('Нельзя выбрать эту карточку!');
+            warningelement.warning('Нельзя выбрать эту палочку!');
         }
     } else {
-        warningelement.warning('Нельзя выбрать эту карточку!');
+        warningelement.warning('Нельзя выбрать эту палочку!');
     }
 }
 function specialCheck({gameRule, gameState, index}){
@@ -53,7 +53,7 @@ function specialCheck({gameRule, gameState, index}){
             if(Math.max(i1, index, i2) - Math.min(i1, index, i2) === 2){
                 gameState.updateElement(index, 2);
             } else {
-                warningelement.warning('Нельзя выбрать эту карточку!');
+                warningelement.warning('Нельзя выбрать эту палочку!');
             }
         }
     }

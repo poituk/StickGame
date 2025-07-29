@@ -24,8 +24,8 @@
     aspect-ratio: 1/1;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s;
-    background: url('../../assets/stick.png') no-repeat center;
-    background-size: 60%;
+    background: url('../../assets/stickMain.png') no-repeat center;
+    background-size: 80%;
     background-blend-mode: overlay;
     height: 100%;
     width: 100%;

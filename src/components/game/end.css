@@ -5,39 +5,32 @@
     transform: translate(-50%, -50%);
     z-index: 1000;
     background: white;
-    width: 45vw;
+    width: 40vw;
     height: 85%;
-    padding: 1%;
     border-radius: 10px;
     border: 2px solid;
 }
   
 .wintext {
-    text-align: center;
     padding: 1%;
     border-bottom: 1px solid;
-}
-.wintext > h1{
-    font-size: 2vw;
-}
-.win-content{
-    height: 77%;
-}
-.info > h5{
-    font-size: 1.15vw;
-}
-.win-exit{
-    display: flex;
-    gap: 2%;
-    height: 5.5em;
-    border-top: 1px solid;
-}
-.win-exit > Button{
-    margin-top: 3%;
-    width: 50%;
     text-align: center;
-    height: auto;
+    height: 10%;
 }
-.info{
-    margin: 2%;
+
+.win-content{
+    padding: 3%;
+    height: 80%;
+}
+
+.win-exit {
+    border-top: 1px solid;
+    padding: 1.5%;
+    height: 10%;
+    gap: 10em;
+}
+.win-exit > button {
+    width: 48%;
+    margin-left: 1%;
+    height: 100%;
 }

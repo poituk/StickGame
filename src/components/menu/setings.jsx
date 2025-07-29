@@ -21,7 +21,7 @@ export default function Setings({stateScreen, setGameRule}) {
             if(!value) {
                 toast.info('Не все поля заполнены!', {
                     position: "bottom-right",
-                    autoClose: 5000,
+                    autoClose: 3000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -31,7 +31,6 @@ export default function Setings({stateScreen, setGameRule}) {
                 return;
             }
         }
-
         if(!data.l){
             data.l = 1;
         }
@@ -41,15 +40,18 @@ export default function Setings({stateScreen, setGameRule}) {
         if(!data.secondPlayer){
             data.secondPlayer = 'Бот';
         }
+        if(!data.gameTime){
+            data.gameTime = 0;
+        }
 
         data.r = parseInt(data.r);
         data.l = parseInt(data.l);
         data.n = parseInt(data.n);
-        console.log(data)
+        data.gameTime = parseInt(data.gameTime);
         if (data.l > data.r) {
             toast.error('Минимум взять за ход должен быть МЕНЬШЕ максимума взять за ход', {
                 position: "bottom-right",
-                autoClose: 5000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -59,7 +61,7 @@ export default function Setings({stateScreen, setGameRule}) {
         } else if (data.r > data.n){
             toast.error('За ход нельзя взять столько палок', {
                 position: "bottom-right",
-                autoClose: 5000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -71,16 +73,26 @@ export default function Setings({stateScreen, setGameRule}) {
             stateScreen('game')
         }
     }
-    const Gmode = [
+    const gameMode = [
         {value: 1, label: 'Стандартный'},
         {value: 2, label: 'Диапазонный'},
         {value: 3, label: '"Рядом"'},
         {value: 4, label: 'Комбинированный'},
         {value: 5, label: 'Особый'},
     ]
-    const Gopponent = [
+    const gameOpponent = [
         {value: 'Bot', label: 'Бот'},
         {value: 'Player', label: 'Второй игрок'}
+    ]
+    const gameTime = [
+        {value: 0, label: 'нет'},
+        {value: 5, label: '5 секунд'},
+        {value: 15, label: '15 секунд'},
+        {value: 30, label: '30 секунд'},
+        {value: 60, label: '1 минута'},
+        {value: 180, label: '3 минуты'},
+        {value: 300, label: '5 минут'},
+        {value: 600, label: '10 минут'},
     ]
     return (
         <div>
@@ -94,7 +106,7 @@ export default function Setings({stateScreen, setGameRule}) {
                 <div className="form-group">
                     <label>Режим </label>
                     <select name="mode" onChange={(e) => setFirstField(e.target.value)}>
-                    {Gmode.map((option) => (
+                    {gameMode.map((option) => (
                         <option key={option.value} value={option.value}>
                         {option.label}
                         </option>
@@ -104,19 +116,56 @@ export default function Setings({stateScreen, setGameRule}) {
                 <div className="form-group">
                     <label>Противник </label>
                     <select name="opponent" onChange={(e) => setSecondState(e.target.value)}>
-                    {Gopponent.map((option) => (
+                    {gameOpponent.map((option) => (
                         <option key={option.value} value={option.value}>
                         {option.label}
                         </option>
                     ))}
                     </select>
                 </div>
+                {secondState != "Bot" && (<div className="form-group">
+                    <label>Ограничение хода </label>
+                    <select name="gameTime" onChange={(e) => setSecondState(e.target.value)}>
+                    {gameTime.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
+                    </select>
+                </div>)}
+                {secondState == "Bot" && (
+                    <div className="form-group">
+                    <label>Первый ходит</label>
+                    <div className="radioButton">
+                        <label>
+                            <input
+                            name = "firstMove"
+                            type="radio"
+                            value={1}
+                            defaultChecked
+                            required
+                            />
+                            {' '}
+                            Игрок
+                        </label>
+                        <label>
+                            <input
+                            name = "firstMove"
+                            type="radio"
+                            value={2}
+                            required
+                            />
+                            {' '}
+                            Бот
+                        </label>
+                    </div>
+                </div>)}
                 {secondState == "Bot" ? (<div className="form-group">
                     <label>Имя игрока</label>
                     <input
                     name = "firstPlayer"
                     type="text"
-                        maxLength={16}
+                    maxLength={16}
                     defaultValue = "Игрок"
                     />
                 </div>) : (
@@ -177,7 +226,7 @@ export default function Setings({stateScreen, setGameRule}) {
             </form>
             <ToastContainer
                 position="top-center"
-                autoClose={5000} 
+                autoClose={3000} 
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

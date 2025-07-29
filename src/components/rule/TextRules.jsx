@@ -1,6 +1,5 @@
 import { Accordion } from 'react-bootstrap';
 
-// Общие правила игры
 export const GeneralRulesItem = () => (
   <Accordion.Item eventKey="0">
     <Accordion.Header>🎮 Основные правила игры</Accordion.Header>
@@ -17,7 +16,6 @@ export const GeneralRulesItem = () => (
   </Accordion.Item>
 );
 
-// Стандартный режим
 export const Mode1RulesItem = () => (
   <Accordion.Item eventKey="1">
     <Accordion.Header>1️⃣ Стандартный режим</Accordion.Header>
@@ -37,7 +35,6 @@ export const Mode1RulesItem = () => (
   </Accordion.Item>
 );
 
-// Диапазонный режим
 export const Mode2RulesItem = () => (
   <Accordion.Item eventKey="2">
     <Accordion.Header>2️⃣ Диапазонный режим</Accordion.Header>
@@ -57,7 +54,6 @@ export const Mode2RulesItem = () => (
   </Accordion.Item>
 );
 
-// Режим "Рядом"
 export const Mode3RulesItem = () => (
   <Accordion.Item eventKey="3">
     <Accordion.Header>3️⃣ Режим "Рядом"</Accordion.Header>
@@ -77,7 +73,6 @@ export const Mode3RulesItem = () => (
   </Accordion.Item>
 );
 
-// Комбинированный режим
 export const Mode4RulesItem = () => (
   <Accordion.Item eventKey="4">
     <Accordion.Header>4️⃣ Комбинированный режим</Accordion.Header>
@@ -97,7 +92,6 @@ export const Mode4RulesItem = () => (
   </Accordion.Item>
 );
 
-// Особый режим (классика)
 export const Mode5RulesItem = () => (
   <Accordion.Item eventKey="5">
     <Accordion.Header>5️⃣ Особый режим (Классика!)</Accordion.Header>
@@ -122,7 +116,6 @@ export const Mode5RulesItem = () => (
   </Accordion.Item>
 );
 
-// Стратегия победы
 export const GoalRulesItem = () => (
   <Accordion.Item eventKey="6">
     <Accordion.Header>🏆 Стратегия победы</Accordion.Header>
@@ -140,7 +133,6 @@ export const GoalRulesItem = () => (
   </Accordion.Item>
 );
 
-// Настройки игры
 export const SettingsInfoItem = () => (
   <Accordion.Item eventKey="7">
     <Accordion.Header>⚙️ Настройки игры</Accordion.Header>
@@ -164,7 +156,6 @@ export const SettingsInfoItem = () => (
   </Accordion.Item>
 );
 
-// Игра с компьютером
 export const ComputerInfoItem = () => (
   <Accordion.Item eventKey="8">
     <Accordion.Header>🤖 Особенности игры с компьютером</Accordion.Header>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button, Accordion } from 'react-bootstrap';
 import * as Rules from './TextRules';
 export default function RulesModal({ show, onClose }) {
-    console.log(Rules)
     return (
       <Modal show={show} onHide={onClose}>
         <Modal.Header closeButton>

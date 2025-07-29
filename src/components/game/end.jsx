@@ -7,14 +7,17 @@ export default function End({name, setWin, gameRule, gameState, countMove, start
         <div className='win-menu'>
             <div className='wintext'>
                 {gameRule.opponent == 'Bot' ?  
-                    (name === 'ImpossibleValue%&&$' ? <h1>Поражение</h1> : <h1>Победа</h1>)
+                    (name === 'ImpossibleValue%&&$' ? <h1 style={{color: 'rgb(200, 39, 39)'}}>Поражение</h1> : <h1 style={{color: 'rgb(36, 162, 66)'}}>Победа</h1>)
                     : 
-                    <h1>{name} победил!</h1>
+                    <h1><b>{name}</b> победил!</h1>
                 }
             </div>
             <div className='win-content'>
                 <div className='info'>
                     <h5>Режим: {listMode[gameRule.mode]}</h5>
+                </div>
+                <div className="info">
+                    <h5>Противник: {(gameRule.opponent == 'Bot') ? 'Бот' : 'Игрок'}</h5>
                 </div>
                 <div className='info'>
                     <h5>Минимум можно взять: {gameRule.l}</h5>
@@ -58,7 +61,7 @@ export default function End({name, setWin, gameRule, gameState, countMove, start
                 </div>
             </div>
             <div className='win-exit'>
-                <Button variant="primary" onClick={() => setWin(undefined)}>Посмотреть поле</Button>
+                <Button className = "firstBut" variant="primary" onClick={() => {setWin(undefined); gameRule.gameTime = 0}}>Посмотреть поле</Button>
                 <Button variant="danger" onClick={() => gameState.stateScreen('menu')}>Выход</Button>
             </div>
         </div>

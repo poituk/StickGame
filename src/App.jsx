@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function App() {
-    const [currentScreen, setCurrentScreen] = useState('menu'); // menu, settings, game
+    const [currentScreen, setCurrentScreen] = useState('menu'); 
     let content
     const [gameRule, setGameRule] = useState({});
     if (currentScreen == "menu"){

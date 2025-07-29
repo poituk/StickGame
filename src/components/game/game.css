@@ -37,13 +37,14 @@
   margin: 0.5em;
 }
 .blockinfo > h5{
-  margin-top: 1em;
+  margin-top: 0.8em;
   margin-bottom: 1em;
   font-size: 1em;
   color: #545c68;
 }
 .blockinfo > h3{
-  font-size: 1.5em;
+  
+  font-size: 1.4em;
   color: #000000;
   
 }
@@ -109,4 +110,10 @@
 }
 .pBut::-webkit-scrollbar {
   width: 0;
+}
+.hint{
+  margin-top: 0.4em;
+  width: 40%;
+  border: 0;
+  background-color: #ece4e4;
 }
