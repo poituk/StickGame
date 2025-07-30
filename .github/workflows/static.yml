@@ -19,9 +19,9 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run dist
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: dist
+          artifact_name: build
