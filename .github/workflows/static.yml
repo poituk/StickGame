@@ -19,7 +19,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build  # Создаёт папку `dist/`
+        run: npm run dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
