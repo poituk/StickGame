@@ -1,12 +1,19 @@
-# React + Vite
+# Игра "Палочки" (StickGame)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[https://poituk.github.io/StickGame/](https://poituk.github.io/StickGame/)
 
-Currently, two official plugins are available:
+## 🛠 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React 19** (основной фреймворк)
+* **Bootstrap 5** + **React-Bootstrap** (стилизация и компоненты)
+* **Lodash** (вспомогательные функции)
+* **React-Toastify** (уведомления)
+* **Node.js v22** (среда выполнения)
 
-## Expanding the ESLint configuration
+## ⚙️Запуск локально
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Установите node.js подходящей версии
+2. **Клонируйте репозиторий** к себе на компьютер
+3. **Перейдите в папку проекта**
+4. **Установите зависимости** через `npm install`
+5. Запустите проект `npm run dev`
